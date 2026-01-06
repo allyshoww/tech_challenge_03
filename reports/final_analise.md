@@ -36,13 +36,3 @@
   * XGBoost + hiperparâmetros
   * Dashboard Streamlit
 
-## 🎥 Próximos Passos
-1. Vídeo 5min: `make all` + screenshots plots
-2. GitHub: `git push` estrutura completa
-3. Deploy: Streamlit + modelos salvos
-
-**Perguntas respondidas**:
-> Quais aeroportos críticos? → Cluster roxo!
-> RF >90% prever atraso? → Sim 100% train!
-
-**Nota esperada: 10/10** 📈
