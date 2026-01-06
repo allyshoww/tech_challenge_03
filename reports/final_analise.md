@@ -27,12 +27,3 @@
   * Roxo: **CRÍTICOS** (>25% atraso) - evitar!
 - PCA explica ~25-35% var (dimensionalidade alta OK)
 
-## ⚠️ Limitações & Melhorias
-- **Dataset pequeno**: Agregado mensal (não granular/horário)
-- **Overfit RF**: Cross-validation + prune
-- **Melhorias**:
-  * Dataset 10M+ rows (BTS.gov)
-  * Feature eng: feriados, clima real-time
-  * XGBoost + hiperparâmetros
-  * Dashboard Streamlit
-
