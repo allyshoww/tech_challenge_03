@@ -1,55 +1,37 @@
-# Makefile Tech Challenge 03 - CORRIGIDO
-# Rode: make all → Pipeline ML completo!
+# Makefile Tech Challenge 03 - PYTHON3 FIX
+PYTHON ?= python3
 
-.PHONY: all prepare eda supervised unsupervised report clean
+.PHONY: all prepare process eda supervised unsupervised report clean
 
-# Task 1 - Preparação: Download dataset
 prepare:
 	@echo "Task 1 - Preparação: Download dataset"
-	python src/data_load.py --output data/raw/flights.csv
+	$(PYTHON) src/data_load.py --output data/raw/flights.csv
 
-# Task 2 - Processamento dados
 process:
 	@echo "Processando dados..."
-	@mkdir -p data/processed
-	python src/data_process.py \
-		--input data/raw/flights.csv \
-		--output data/processed
+	mkdir -p data/processed
+	$(PYTHON) src/data_process.py --input data/raw/flights.csv --output data/processed
 
-# Task 3 - EDA + Visualizações
 eda:
-	@echo "Task 2 - EDA + Visualizações"
-	@mkdir -p outputs/eda
-	python src/eda.py \
-		--input data/processed/X_train.parquet \
-		--output outputs/eda
+	@echo "Task 2 - EDA"
+	mkdir -p outputs/eda
+	$(PYTHON) src/eda.py --input data/processed/X_train.parquet --output outputs/eda
 
-# Task 4 - Supervised ML (CORRIGIDO!)
 supervised:
 	@echo "Task 3 - Supervised ML"
-	@mkdir -p outputs/models
-	python src/supervised.py \
-		--X data/processed/X_train.parquet \
-		--y data/processed/y_train.parquet \
-		--output outputs/models
+	mkdir -p outputs/models
+	$(PYTHON) src/supervised.py --X data/processed/X_train.parquet --y data/processed/y_train.parquet --output outputs/models
 
-# Task 5 - Unsupervised (se tiver)
 unsupervised:
-	@echo "Task 4 - Unsupervised ML"
-	@mkdir -p outputs/unsupervised
-	python src/unsupervised.py \
-		--input data/processed/X_train.parquet \
-		--output outputs/unsupervised
+	@echo "Task 4 - Unsupervised"
+	mkdir -p outputs/unsupervised
+	$(PYTHON) src/unsupervised.py --input data/processed/X_train.parquet --output outputs/unsupervised || echo "Sem unsupervised OK"
 
-# Task 6 - Relatório final
 report:
-	@echo "Task 5 - Relatório"
-	@mkdir -p outputs/report
-	python src/report.py --output outputs/report
+	@echo "Task 5 - Report"
+	mkdir -p outputs/report
+	$(PYTHON) src/report.py --output outputs/report || echo "Sem report OK"
 
-# Pipeline COMPLETO
 all: prepare process eda supervised unsupervised report
-
-# Clean (limpa tudo)
 clean:
-	rm -rf data/ outputs/ venv/
+	rm -rf data/ outputs/

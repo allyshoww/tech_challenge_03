@@ -1,2 +1,0 @@
-RandomForest: Accuracy 1.000
-LogisticReg: Accuracy 0.947
