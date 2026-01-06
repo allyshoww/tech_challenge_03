@@ -1,0 +1,43 @@
+# .gitignore Tech Challenge 03 - Data Science/ML
+# Ambiente virtual
+venv/
+env/
+.venv/
+
+# Dados grandes (não versiona)
+data/raw/
+data/processed/
+outputs/
+models/
+*.pkl
+*.parquet
+*.csv
+*.png
+*.pdf
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Jupyter
+.ipynb_checkpoints/
