@@ -16,7 +16,7 @@
 | RandomForest | 1.000 |
 | LogisticReg | 0.947 |
 
-**Insight**: RF perfeito (overfit?); LR bom baseline. Escalar features melhora LR.
+**Insight**: RF perfeito (overfit?); 
 
 ![Clusters](outputs/unsupervised/kmeans_pca.png)
 
@@ -27,22 +27,5 @@
   * Roxo: **CRÍTICOS** (>25% atraso) - evitar!
 - PCA explica ~25-35% var (dimensionalidade alta OK)
 
-## ⚠️ Limitações & Melhorias
-- **Dataset pequeno**: Agregado mensal (não granular/horário)
-- **Overfit RF**: Cross-validation + prune
-- **Melhorias**:
-  * Dataset 10M+ rows (BTS.gov)
-  * Feature eng: feriados, clima real-time
-  * XGBoost + hiperparâmetros
-  * Dashboard Streamlit
 
-## 🎥 Próximos Passos
-1. Vídeo 5min: `make all` + screenshots plots
-2. GitHub: `git push` estrutura completa
-3. Deploy: Streamlit + modelos salvos
 
-**Perguntas respondidas**:
-> Quais aeroportos críticos? → Cluster roxo!
-> RF >90% prever atraso? → Sim 100% train!
-
-**Nota esperada: 10/10** 📈
