@@ -27,5 +27,8 @@
   * Roxo: **CRÍTICOS** (>25% atraso) - evitar!
 - PCA explica ~25-35% var (dimensionalidade alta OK)
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 542c2b0162065b01afcfe7921c50d8d02bba0a22
