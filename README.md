@@ -12,7 +12,7 @@
 
 ## 🚀 Pipeline DevOps (5min total)
 ```bash
-git clone <repo> && cd Tech_Challenge_03
+git clone && cd Tech_Challenge_03
 python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 make all  # Baixa dados → processa → EDA → ML → relatório
